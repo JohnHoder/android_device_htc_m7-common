@@ -35,7 +35,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31
-BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8960
@@ -46,7 +45,6 @@ BOARD_USES_SEPERATED_AUDIO_INPUT := true  # use distinct voice recognition use c
 BOARD_USES_SEPERATED_FM := true # use distinct fm use cases
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true  # use distinct voice speaker use case
 BOARD_USES_SEPERATED_VOIP := true  # use distinct VOIP use cases
-BOARD_AUDIO_AMPLIFIER := $(LOCAL_PATH)/libaudioamp
 BOARD_HAVE_HTC_CSDCLIENT := true
 
 # Bluetooth
@@ -56,6 +54,7 @@ BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Camera
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
